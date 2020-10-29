@@ -1,0 +1,15 @@
+{
+    "name": "turcalendar/turcalendar",
+    "description": "Пример кода с проекта Turcalendar.ru",
+    "authors": [
+        {
+            "name": "Alexei Veremeyenko",
+            "email": "alexverem@mail.ru"
+        }
+    ],
+    "require": {
+        "twig/twig": "~1.8"
+    }
+} 
+
+
