@@ -5,11 +5,16 @@
 // автозагрузчик (autoload.php) и другие зависимости
 require_once(__DIR__ . '/bootstrap.php');
 
-use Turcalendar\Place\Place as Place;
-use Turcalendar\Place\PlaceFactory as PlaceFactory;
-use Turcalendar\Place\PlaceFilter as PlaceFilter;
+use Turcalendar\Place\Place;
+use Turcalendar\Place\PlaceFactory;
+use Turcalendar\Place\PlaceFilter;
 
-$db = new \PDO(DB_DSN, DB_USER, DB_PASS, DB_OPTIONS);
+$dbConfig = $config['database'];
+$dsn = "{$dbConfig['driver']}:host={$dbConfig['host']};port={$dbConfig['port']};" .
+    "dbname={$dbConfig['name']};charset={$dbConfig['charset']}";
+
+$db = new \PDO($dsn, $dbConfig['username'], $dbConfig['password'], $dbConfig['options']);
+
 $placeFactory = new PlaceFactory($db);
 $placeFilter = new PlaceFilter();
 
