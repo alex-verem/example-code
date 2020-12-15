@@ -3,7 +3,7 @@
 // Используется для загрузки конфигурационного файла, централизованного
 // обработчика исключений, автозагрузчика и т.п.
 
-require_once __DIR__ . '/config.php';
+$config = require_once __DIR__ . '/config.php';
 require_once __DIR__ . '/error-handler.php';
 require_once __DIR__ . '/vendor/autoload.php';
 require_once __DIR__ . '/autoload.php';
